@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>net.riastar.components</groupId>
+  <artifactId>collapsible-panel-spark-fx</artifactId>
+  <version>SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20130114.171406</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20130114171406</lastUpdated>
+  </versioning>
+</metadata>
