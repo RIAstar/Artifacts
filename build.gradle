@@ -1,0 +1,36 @@
+def groupIds = ['net.riastar.components']
+
+task clean << {
+	println 'Cleaning up old artifacts'
+
+	groupIds.each {
+		delete it.tokenize('.')[0]
+	}
+}
+
+task copy << {
+	println 'Pulling repository groups from local maven cache:'
+
+	groupIds.each {
+		println '\t' + it
+		def dir = it.replace '.', '/'
+
+		copy {
+    		from "file://${System.getProperty('user.home')}/.m2/repository/$dir"
+    		into dir
+		}
+	}
+}
+
+task push() << {
+	println 'Pushing artifacts to GitHub'
+
+	exec {
+		commandLine 'git push'
+	}
+}
+
+task upload {
+	dependsOn clean, copy, push
+}
+
