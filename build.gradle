@@ -25,9 +25,9 @@ task copy << {
 task push() << {
 	println 'Pushing artifacts to GitHub'
 
-	exec {
+	/*exec {
 		commandLine 'git push'
-	}
+	}*/
 }
 
 task upload {
